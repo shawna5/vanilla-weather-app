@@ -11,10 +11,90 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/7f7f1c175a.js" crossorigin="anonymous"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
+      <body>
+  <div class="container">
+        <div class="card-header"></div>
+      <div class="card text-center">
+  <div class="card-header w-75">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link Halifax"  href="#">Halifax</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Ottawa" href="#">Toronto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Calgary" href="#">Calgary</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Vancouver" href="#">Vancouver</a>
+      </li>
+    </ul>
+  </div>
+<form id="search-form">
+  <div class="mb-3">
+    <input type="text" class="form-control" id="example-input-city" placeholder="Enter city" autocomplete="Off" autofocus = "on">
+  </div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+  <button class="btn btn-primary me-md-2" id="search-button" type="submit" value = "Search" >Search</button>
+  <button type="button" class="btn btn-success" id="current-button">Current</button>
+</div>
+</form>
+<div class="weather">
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card" id="city">
+      <div class="card-body">
+        <h5 class="card-title" id = "specific-city">Ottawa</h5>
+        <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> <p>Cloudy</p>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card" id="current-temp">
+      <div class="card-body">
+        <h5 class="card-title"><span id="temperature-converter"> 18 </span>
+          <span> <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a> </span> </h5>
+        <p class="card-text"><i class="fas fa-cloud-moon"></i></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" id="more-info">
+      <div class="card-body">
+           <h5 class="card-title">More Info</h5>
+        <p class="card-text">Feels like 22°C </br> Wind: NW 10Km/Hr</p>
+      </div>
+      </div>
+    </div>
+</div>
+</div>
+ <div class="card-footer">
+  <div class="row">
+    <div class="col">
+      Mon: 21°C
+    </div>
+    <div class="col">
+      Tue: 20°C
+    </div>
+    <div class="col">
+      Wed: 24°C
+    </div>
+    <div class="col">
+      Thur: 23°C
+    </div>
+    <div class="col">
+      Fri: 25°C
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
       <h1>Weather App</h1>
     </div>
     <script src="src/index.js"></script>
