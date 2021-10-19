@@ -1,12 +1,9 @@
-.card-header {
-  background: #fff;
-}
 .card-title {
   font-size: 36px;
 }
 .form-control {
   margin-top: 5px;
-  width: 50%;
+  width: 25%;
 }
 .w-75 {
   width: 100% !important;
