@@ -33,7 +33,7 @@
     <div class="card" id="city">
       <div class="card-body">
         <h5 class="card-title" id = "specific-city">Ottawa</h5>
-        <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> <p>Cloudy</p>
+        <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> <p id="weather-description">Cloudy</p>
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@
       <div class="card-body">
         <h5 class="card-title"><span id="temperature-converter"> 18 </span>
           <span> <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a> </span> </h5>
-        <p class="card-text"><i class="fas fa-cloud-moon"></i></p>
+        <p class="card-text"><i id ="icon" class="fas fa-cloud-moon"></i></p>
       </div>
     </div>
   </div>
@@ -50,7 +50,8 @@
     <div class="card" id="more-info">
       <div class="card-body">
            <h5 class="card-title">More Info</h5>
-        <p class="card-text">Feels like 22°C </br> Wind: NW 10Km/Hr</p>
+        <p class="card-text">Feels Like: <span id="feels-like"> </span>°C </p>
+        <p class="card-text"> Wind:<span id="wind">  NW 10Km/Hr</span></p>
       </div>
       </div>
     </div>

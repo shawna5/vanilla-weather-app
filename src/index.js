@@ -38,6 +38,14 @@ function showTemperture(response) {
   currentCity = response.data.name;
   let tempDisplay = document.querySelector("#temperature-converter");
   tempDisplay.innerHTML = Math.round(response.data.main.temp);
+  let descriptionElement = document.querySelector("#weather-description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = response.data.weather[0].icon;
+  let feelsLikeElement = document.querySelector("#feels-like");
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
 }
 
 let form = document.querySelector("#search-form");
@@ -74,9 +82,3 @@ temperatureConverter = document.querySelector("#temperature-converter");
 
 let celsiusClick = document.querySelector("#celsius-link");
 celsiusClick.addEventListener("click", convertCelsius);
-
-/*👨‍🏫Your task
-On your project, when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
-
-🙀 Bonus point:
-Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.*/
