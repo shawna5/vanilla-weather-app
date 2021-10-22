@@ -38,10 +38,16 @@ function showTemperture(response) {
   currentCity = response.data.name;
   let tempDisplay = document.querySelector("#temperature-converter");
   tempDisplay.innerHTML = Math.round(response.data.main.temp);
+
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = response.data.weather[0].icon;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+
   let feelsLikeElement = document.querySelector("#feels-like");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   let windElement = document.querySelector("#wind");
