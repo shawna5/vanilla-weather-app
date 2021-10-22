@@ -45,7 +45,7 @@ function showTemperture(response) {
   let feelsLikeElement = document.querySelector("#feels-like");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = response.data.wind.speed;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 let form = document.querySelector("#search-form");
