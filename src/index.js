@@ -47,7 +47,7 @@ function showTemperture(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
-
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   let feelsLikeElement = document.querySelector("#feels-like");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   let windElement = document.querySelector("#wind");

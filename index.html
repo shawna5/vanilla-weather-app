@@ -17,8 +17,13 @@
   <body>
     <div class="container">
       <h1>Weather App</h1>
-      <div class="card text-center">
-<form id="search-form">
+<div class="weather">
+<div class="row">
+  <div class="col-sm-6">
+
+    <div class="card" id="city">
+      <div class="card-body">
+            <form id="search-form">
   <div class="mb-3">
     <input type="text" class="form-control" id="example-input-city" placeholder="Enter city" autocomplete="Off" autofocus = "on">
   </div>
@@ -27,34 +32,17 @@
   <button type="button" class="btn btn-success" id="current-button">Current</button>
 </div>
 </form>
-<div class="weather">
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card" id="city">
-      <div class="card-body">
         <h5 class="card-title" id = "specific-city">Ottawa</h5>
-        <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> <p id="weather-description">Cloudy</p>
-      </div>
-    </div>
-  </div>
-    <div class="col-sm-4">
-    <div class="card" id="current-temp">
-      <div class="card-body">
         <h5 class="card-title"><span id="temperature-converter"> 18 </span>
           <span> <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a> </span> </h5>
-        <p class="card-text"><img id ="icon" src=http://openweathermap.org/img/wn/10d@2x.png ></img></p>
+        <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> 
+                <img id ="icon" src=http://openweathermap.org/img/wn/10d@2x.png ></img><p id="weather-description">Cloudy</p>
+                       
+                <span class="card-text">Feels Like: <span id="feels-like"> </span>°C </span>
+        <span class="card-text"> Wind:<span id="wind">  NW 10Km/Hr</span></span>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card" id="more-info">
-      <div class="card-body">
-           <h5 class="card-title">More Info</h5>
-        <p class="card-text">Feels Like: <span id="feels-like"> </span>°C </p>
-        <p class="card-text"> Wind:<span id="wind">  NW 10Km/Hr</span></p>
-      </div>
-      </div>
-    </div>
 </div>
 </div>
  <div class="card-footer">

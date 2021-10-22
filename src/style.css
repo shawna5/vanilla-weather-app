@@ -1,29 +1,28 @@
 .card-title {
   font-size: 36px;
+  text-align: left;
+}
+#current-time {
+  text-align: left;
+}
+#temperature-converter {
+  text-align: left;
+}
+#icon {
+  margin: 0 auto;
 }
 .form-control {
   margin-top: 5px;
-  width: 25%;
+  width: 25px;
 }
-.w-75 {
-  width: 100% !important;
-}
+
 .btn {
   margin: 5px;
 }
 .weather {
   margin-top: 5px;
 }
-.fa-cloud-moon {
-  font-size: 36px;
-  margin-top: 18px;
-  margin-bottom: 18px;
-}
-#more-info {
-  font-size: 16px;
-  padding-top: 5px;
-  padding-bottom: 15px;
-}
+
 #weather-description {
   text-transform: capitalize;
 }
