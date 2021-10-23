@@ -37,20 +37,21 @@ function showTemperture(response) {
   console.log(response.data.main.temp);
   currentCity = response.data.name;
   let tempDisplay = document.querySelector("#temperature-converter");
-  tempDisplay.innerHTML = Math.round(response.data.main.temp);
-
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
-
   let iconElement = document.querySelector("#icon");
+  let humiditylement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+
+  celsiusTemperature = response.data.main.temp;
+
+  tempDisplay.innerHTML = Math.round(celsiusTemperature);
+  descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  let humiditylement = document.querySelector("#humidity");
   humiditylement.innerHTML = Math.round(response.data.main.humidity);
-  let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
@@ -68,9 +69,12 @@ function showPosition(position) {
   axios.get(`${geoApiUrl}`).then(showTemperture);
 }
 
+let celsiusTemperature = null;
+
 function convertFahrenheit(event) {
   event.preventDefault();
-  temperatureConverter.innerHTML = "64";
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureConverter.innerHTML = Math.round(fahrenheitTemperature);
 }
 let temperatureConverter = document.querySelector("#temperature-converter");
 
@@ -79,9 +83,7 @@ fahrenheitClick.addEventListener("click", convertFahrenheit);
 
 function convertCelsius(event) {
   event.preventDefault();
-  temperatureConverter.innerHTML = "18";
+  temperatureConverter.innerHTML = Math.round(celsiusTemperature);
 }
-temperatureConverter = document.querySelector("#temperature-converter");
-
 let celsiusClick = document.querySelector("#celsius-link");
 celsiusClick.addEventListener("click", convertCelsius);
