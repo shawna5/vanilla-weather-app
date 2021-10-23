@@ -48,8 +48,8 @@ function showTemperture(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  let feelsLikeElement = document.querySelector("#feels-like");
-  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+  let humiditylement = document.querySelector("#humidity");
+  humiditylement.innerHTML = Math.round(response.data.main.humidity);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
@@ -67,9 +67,6 @@ function showPosition(position) {
   document.querySelector("#specific-city").innerHTML = currentCity;
   axios.get(`${geoApiUrl}`).then(showTemperture);
 }
-
-let button = document.querySelector("#current-button");
-button.addEventListener("click", getLocation);
 
 function convertFahrenheit(event) {
   event.preventDefault();

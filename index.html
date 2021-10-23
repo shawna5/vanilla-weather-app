@@ -20,7 +20,6 @@
 <div class="weather">
 <div class="row">
   <div class="col-sm-6">
-
     <div class="card" id="city">
       <div class="card-body">
             <form id="search-form">
@@ -29,24 +28,31 @@
   </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
   <button class="btn btn-primary me-md-2" id="search-button" type="submit" value = "Search" >Search</button>
-  <button type="button" class="btn btn-success" id="current-button">Current</button>
 </div>
 </form>
-        <h5 class="card-title" id = "specific-city">Ottawa</h5>
-        <h5 class="card-title"><span id="temperature-converter"> 18 </span>
-          <span> <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a> </span> </h5>
-        <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> 
-                <img id ="icon" src=http://openweathermap.org/img/wn/10d@2x.png ></img><p id="weather-description">Cloudy</p>
-                       
-                <span class="card-text">Feels Like: <span id="feels-like"> </span>°C </span>
-        <span class="card-text"> Wind:<span id="wind">  NW 10Km/Hr</span></span>
+    <div class="row justify-content-around">
+    <div class="col-4">
+ <h5 class="card-title" id = "specific-city">Ottawa</h5>   
+         <p class="card-text" id ="current-time"> Wednesday 12:55pm</p> 
+                         <p class="card-text">Humidity: <span id="humidity"> 25 </span>% </p>
+                                 <span class="card-text"> Wind: <span id="wind"> 10</span> km/hr</span>    
+    </div>
+    <div class="col-4">
+       <h5 class="card-title" id="temperature"><span id="temperature-converter"> 18 </span>          <span> <a href="#" id="celsius-link"><sup>°C</sup></a> | <a href="#" id="fahrenheit-link"><sup>°F</sup></a> </span> </h5>      
+       <img src=http://openweathermap.org/img/wn/10d@2x.png class="rounded mx-auto d-block"  id="icon" alt="weather icon"></img>    
+       <div id="weather-description"><p> Cloudy</p></div>
+
+    </div>
+  </div>
       </div>
     </div>
   </div>
 </div>
 </div>
  <div class="card-footer">
+   <div class="col-sm-6"> 
    <div class="link"> <a href="https://github.com/shawna5/MyWeatherApp"> Coded by Shawna Holmes </a> </div>
+  </div>
   </div>
  
   </div>

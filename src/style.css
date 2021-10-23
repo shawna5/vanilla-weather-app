@@ -2,14 +2,25 @@
   font-size: 36px;
   text-align: left;
 }
+.card {
+  word-break: keep-all;
+}
 #current-time {
   text-align: left;
 }
-#temperature-converter {
-  text-align: left;
+#temperature {
+  text-align: center;
+}
+#celsius-link {
+  font-size: 22px;
+}
+#fahrenheit-link {
+  font-size: 22px;
 }
 #icon {
-  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  vertical-align: text-top;
 }
 .form-control {
   margin-top: 5px;
@@ -25,4 +36,10 @@
 
 #weather-description {
   text-transform: capitalize;
+  text-align: center;
+}
+.card-footer {
+  background-color: #fff;
+  border-top: 0px;
+  max-width: 635px;
 }
