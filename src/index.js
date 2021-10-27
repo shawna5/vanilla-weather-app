@@ -2,8 +2,7 @@ let searchCity = "";
 let units = "metric";
 let apiKey = "597c40c39084687093b091cd48b366f8";
 let apiUrl;
-let currentCity = "";
-
+let searchHeading = "";
 let now = new Date();
 console.log(now);
 let days = [
@@ -63,18 +62,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function search(event) {
-  event.preventDefault();
-  searchCity = document.querySelector("#example-input-city");
-  searchCity = searchCity.value;
-  console.log(searchCity);
-  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
-  axios.get(`${apiUrl}`).then(showTemperture);
-
-  let searchHeading = document.querySelector("#specific-city");
-  searchHeading.innerHTML = `${searchCity}`;
-}
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "597c40c39084687093b091cd48b366f8";
@@ -82,7 +69,7 @@ function getForecast(coordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-function showTemperture(response) {
+function showTemperature(response) {
   console.log(response.data.main.temp);
   currentCity = response.data.name;
   let tempDisplay = document.querySelector("#temperature-converter");
@@ -104,19 +91,28 @@ function showTemperture(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   getForecast(response.data.coord);
 }
+function defaultCity(city) {
+  apiKey = "597c40c39084687093b091cd48b366f8";
+  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  searchHeading = document.querySelector("#specific-city");
+  searchHeading.innerHTML = city;
+  axios.get(apiUrl).then(showTemperature);
+}
 
+function search(event) {
+  event.preventDefault();
+  searchCity = document.querySelector("#example-input-city");
+  searchCity = searchCity.value;
+  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=${units}`;
+  axios.get(`${apiUrl}`).then(showTemperature);
+
+  searchHeading = document.querySelector("#specific-city");
+  searchHeading.innerHTML = `${searchCity}`;
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-//navigator.geolocation.getCurrentPosition(showPosition);
 function getLocation() {
   return navigator.geolocation.getCurrentPosition(showPosition);
-}
-function showPosition(position) {
-  //let lat = position.coords.latitude;
-  //let lon = position.coords.longitude;
-  let geoApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
-  document.querySelector("#specific-city").innerHTML = currentCity;
-  axios.get(`${geoApiUrl}`).then(showTemperture);
 }
 
 let celsiusTemperature = null;
@@ -137,3 +133,5 @@ function convertCelsius(event) {
 }
 let celsiusClick = document.querySelector("#celsius-link");
 celsiusClick.addEventListener("click", convertCelsius);
+
+defaultCity("Ottawa");
